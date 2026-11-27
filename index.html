@@ -209,6 +209,75 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradi
 .nav button.on{width:auto;padding:0 22px 0 18px;border-radius:999px;background:linear-gradient(180deg,#d9ff4a,#b6e817);color:#111;box-shadow:0 0 18px rgba(200,243,29,.45)}
 .nav button.on:after{content:attr(aria-label);margin-left:8px;font-size:14px;font-weight:700}
 
+
+/* ---- Grammar tab ---- */
+.gm-top{position:relative;margin-top:12px;padding:14px 16px;border-radius:22px;background:linear-gradient(135deg,#232321,#141413);color:#f4f3ee;box-shadow:0 12px 28px rgba(0,0,0,.22);display:flex;align-items:center;gap:14px;flex-wrap:wrap;overflow:hidden}
+.gm-big{font-size:40px;font-weight:800;letter-spacing:-1.5px;line-height:1;color:var(--lime);text-shadow:0 0 12px rgba(200,243,29,.7)}
+.gm-tx{flex:1}.gm-tx small{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#a9a8a0}.gm-tx span{font-size:14px}
+.gm-bar{flex:0 0 100%;height:6px;border-radius:3px;background:rgba(255,255,255,.14);overflow:hidden}.gm-bar i{display:block;height:100%;width:0;min-width:4px;border-radius:3px;background:linear-gradient(90deg,#d9ff4a,#b6e817);box-shadow:0 0 10px rgba(200,243,29,.8);transition:width 1s cubic-bezier(.2,.9,.25,1)}
+.gm-lvs{display:flex;gap:8px;margin-top:12px}
+.gm-lv{flex:1;padding:9px 0;border-radius:14px;border:none;font-family:inherit;font-size:14px;font-weight:700;background:var(--gl);color:var(--mu)}
+.gm-lv.on{background:#171716;color:var(--lime)}.gm-lv.soon:not(.on){opacity:.6}
+.gm-pcs{display:flex;gap:8px;overflow-x:auto;margin:12px -16px 0;padding:0 16px 4px;scrollbar-width:none}.gm-pcs::-webkit-scrollbar{display:none}
+.gm-pc{position:relative;flex:none;display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;border:none;overflow:hidden;font-family:inherit;font-size:13px;font-weight:700;background:var(--gl);color:var(--mu);white-space:nowrap}
+.gm-pc i{position:absolute;left:0;top:0;bottom:0;background:rgba(182,232,23,.35);transition:width .8s cubic-bezier(.2,.9,.25,1)}
+.gm-pc span,.gm-pc em{position:relative}.gm-pc em{font-style:normal;font-size:11px;font-weight:700;opacity:.7}
+.gm-pc.on{background:#171716;color:var(--lime)}.gm-pc.on i{background:rgba(200,243,29,.28)}
+.gm-rl{position:relative;margin-top:10px;padding:12px;border-radius:22px;background:var(--gl);border:1px solid var(--glb);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.gm-rl.lock{border-style:dashed;opacity:.8}
+.gm-hd{display:flex;align-items:center;gap:12px;width:100%;border:none;background:none;text-align:left;font-family:inherit;color:inherit;padding:0}
+.gm-rl.lock .gm-hd{cursor:default}
+.gm-nb{width:38px;height:38px;border-radius:12px;background:#171716;color:var(--lime);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex:none}
+.gm-rl.lock .gm-nb{background:var(--neu);color:var(--mu)}
+.gm-tt{flex:1;min-width:0}.gm-tt b{display:block;font-size:15px;font-weight:650}.gm-tt span{font-size:12px;color:var(--tx2)}
+.gm-chev{width:28px;height:28px;border-radius:50%;background:var(--neu);display:flex;align-items:center;justify-content:center;transition:transform .45s cubic-bezier(.2,.9,.25,1);flex:none}
+.gm-rl.open .gm-chev{transform:rotate(180deg)}
+.gm-bw{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.2,.9,.25,1)}.gm-rl.open .gm-bw{grid-template-rows:1fr}.gm-bw>div{overflow:hidden}
+.gm-t{font-size:13px;line-height:1.45;margin-top:12px;color:var(--tx2)}
+.gm-l{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);margin-top:14px}
+.gm-tb{margin-top:8px;border-radius:16px;background:#171716;color:#f4f3ee;padding:6px 14px}
+.gm-tb div{display:flex;align-items:center;justify-content:space-between;padding:8px 0;font-size:15px;border-bottom:1px solid rgba(255,255,255,.08)}.gm-tb div:last-child{border:none}
+.gm-tb i{font-style:normal;color:#a9a8a0;font-size:13px}.gm-tb b{font-weight:600}
+.gm-tb u,.gm-sch u,.gm-rl u{text-decoration:none;color:#c8f31d;text-shadow:0 0 8px rgba(200,243,29,.6)}.gm-tb u.x,.gm-sch u.x,.gm-rl u.x{color:#ff9a2e;text-shadow:0 0 8px rgba(255,154,46,.6)}
+.gm-sch{margin-top:12px;border-radius:18px;background:#171716;color:#f4f3ee;padding:14px}
+.gm-st{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#a9a8a0;margin-bottom:10px}
+.gm-g2{display:flex;gap:10px}.gm-g2>div{flex:1;border-radius:14px;padding:12px;background:rgba(255,255,255,.06)}
+.gm-g2 small{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#a9a8a0}
+.gm-g2 big{display:block;margin:6px 0 8px;font-size:22px;font-weight:800;letter-spacing:-1px;color:#c8f31d;text-shadow:0 0 12px rgba(200,243,29,.6)}
+.gm-g2 p{margin:3px 0;font-size:14px}.gm-g2 .f big{color:#ffb04d;text-shadow:0 0 12px rgba(255,154,46,.6)}
+.gm-rw{display:flex;align-items:center;gap:8px;padding:9px 0;border-top:1px solid rgba(255,255,255,.08);font-size:14px;flex-wrap:wrap}.gm-st+.gm-rw{border-top:none}
+.gm-rw .e{flex:none;width:112px;font-size:12px;color:#a9a8a0;line-height:1.25}.gm-rw .w{font-weight:600}
+.gm-rw .a{padding:3px 9px;border-radius:999px;background:#c8f31d;color:#111;font-size:12px;font-weight:800}.gm-rw .r{font-weight:700;color:#c8f31d}
+.gm-xb{margin-top:14px;border-radius:16px;background:rgba(255,154,46,.12);border-left:4px solid #ff9a2e;padding:10px 12px}
+.gm-xb h6{margin:0 0 4px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#c4721c;display:flex;align-items:center;gap:6px}
+.gm-xr{display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid rgba(196,114,28,.18);font-size:14px}.gm-xb h6+.gm-xr{border-top:none}
+.gm-xr em{font-style:normal;font-weight:700;width:76px}.gm-xr s{color:var(--mu);text-decoration-color:rgba(196,114,28,.7);font-size:13px}.gm-xr i{font-style:normal;color:#c4721c}
+.gm-xr b{margin-left:auto;padding:3px 10px;border-radius:10px;background:#171716;color:#ff9a2e;font-weight:700;text-shadow:0 0 8px rgba(255,154,46,.6)}
+.gm-ch{display:inline-block;margin:6px 6px 0 0;padding:6px 11px;border-radius:12px;background:rgba(255,154,46,.16);color:#a85d10;font-size:13px;font-weight:600}
+.gm-xn{font-size:13px;line-height:1.45;margin-top:6px}
+.gm-lg{display:flex;gap:14px;margin-top:10px;font-size:12px;color:var(--tx2);flex-wrap:wrap}.gm-lg u{text-decoration:none;font-weight:700;background:#171716;padding:1px 6px;border-radius:6px}
+.gm-ex{margin-top:8px;padding:10px 12px;border-radius:14px;background:var(--sf);border:1px solid var(--bd)}
+.gm-ex b{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600}
+.gm-sp{margin-left:auto;width:26px;height:26px;border-radius:50%;border:none;background:var(--lime);color:#111;display:flex;align-items:center;justify-content:center;flex:none}
+.gm-ex small{display:block;margin-top:3px;font-size:12px;color:var(--tx2)}
+.nav{gap:4px}
+
+.gm-more{margin-top:12px;text-align:center;font-size:13px;color:var(--mu)}
+
+.gm-top{gap:16px;flex-wrap:nowrap;padding:16px}
+.gm-wd{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.gm-wd span{position:absolute;color:#9a9a92;font-weight:700;opacity:.05;animation:gmdr 9s ease-in-out infinite}
+@keyframes gmdr{0%,100%{transform:translate(0,0);opacity:.03}50%{transform:translate(6px,-6px);opacity:.09}}
+.gm-ring{position:relative;flex:none;width:84px;height:84px}
+.gm-ring b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;color:var(--lime);text-shadow:0 0 12px rgba(200,243,29,.8)}
+.gm-rg{transition:stroke-dashoffset 1.3s cubic-bezier(.2,.9,.25,1) .2s;filter:drop-shadow(0 0 6px rgba(200,243,29,.8))}
+.gm-top .gm-tx{position:relative}.gm-big2{display:block;margin-top:2px;font-size:20px;font-weight:700}
+.gm-nx{display:block;margin-top:6px;font-size:12px;color:#a9a8a0;line-height:1.3}
+.gm-tg{display:block;font-style:normal;font-size:11px;font-weight:700;letter-spacing:.04em;margin-top:2px}
+.gm-nb{font-size:15px}
+.gm-rl:not(.lock){transition:transform .25s cubic-bezier(.2,.9,.25,1),box-shadow .25s}.gm-rl:not(.lock):active{transform:scale(.985)}
+.gm-rl.open{box-shadow:0 12px 30px rgba(0,0,0,.1)}
+
 /* ---- Tilde v2 play screen ---- */
 :root{--o1:#ffffff;--o2:#f3f2ec;--cardsh:rgba(0,0,0,.13)}
 @media(prefers-color-scheme:dark){:root{--o1:#2c2c2a;--o2:#262624;--cardsh:rgba(0,0,0,.5)}}
@@ -315,6 +384,9 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradi
 </head>
 <body>
 <div id="app"></div>
+<script src="landing-data.js"></script>
+<script src="placement.js"></script>
+<script src="onboarding.js"></script>
 <script>
 const G=(t,l,a)=>a.map(x=>[...x,l,t]);
 let POOL=[].concat(
@@ -505,11 +577,26 @@ async function pullDb(){
 const idxs=()=>POOL.map((_,i)=>i);
 const lvIdx=L=>idxs().filter(i=>POOL[i][7]===L);
 function lvStat(L){const a=lvIdx(L);return{t:a.length,k:a.filter(i=>cs(POOL[i][1]).s==='k').length}}
-function curLv(){for(const L of LV){const s=lvStat(L);if(s.t>0&&s.k<s.t)return L}for(let j=LV.length-1;j>=0;j--)if(lvStat(LV[j]).t>0)return LV[j];return 'A1'}
-function order(){
- const by={};POOL.forEach((w,i)=>{(by[w[7]]=by[w[7]]||{});(by[w[7]][w[8]]=by[w[7]][w[8]]||[]).push(i)});
- const o=[];LV.forEach(L=>{if(!by[L])return;const gs=Object.values(by[L]);let more=true,k=0;while(more){more=false;gs.forEach(g=>{if(g[k]!==undefined){o.push(g[k]);more=true}});k++}});return o;
-}
+function setLv(L){ST.lv=L;ST.focus=null;lsSet();go('home')}
+function curLv(){if(ST.lv&&LV.includes(ST.lv)&&lvStat(ST.lv).t>0)return ST.lv;for(const L of LV){const s=lvStat(L);if(s.t>0&&s.k<s.t)return L}for(let j=LV.length-1;j>=0;j--)if(lvStat(LV[j]).t>0)return LV[j];return 'A1'}
+// ---- порядок изучения: ступени (темы) от базовых к сложным; слова и простые фразы идут вместе
+const UALIAS={'Приветствия':'Приветствия и вежливость','Время и числа':'Дни, месяцы, время суток'};const UOV={diez:'Числа 0–10',veinte:'Числа 11–20'};
+const UN={
+ A1:['Приветствия и вежливость','Знакомство','Глаголы 1','Числа 0–10','Числа 11–20','Дни, месяцы, время суток','Числа 21–99','Фразы на каждый день','Семья и люди','Вопросы и связки','Цвета и описание','Глаголы','Глаголы 2','Еда и продукты','Кафе и еда','Дом и вещи','Дом и люди','Тело и здоровье','Одежда и погода','Магазин','Город','Направления и транспорт','Профессии и стройка','Поиск работы','Собеседование','Условия работы','Фразы для собеседования','Грамматика A1'],
+ A2:['Сотни и тысячи','Порядковые числа','Дроби и количество','Быт и жильё','Покупки и банк','Здоровье и аптека','Путешествия и транспорт','Свободное время и дела','Эмоции и мнение','Прошедшее время и связки','Прошедшее время','Работа и документы','Стройка (базовая лексика)','Грамматика A2'],
+ B1:['Общество и новости','Работа и карьера','Стройка и управление проектом','Мнения и чувства','Устойчивые выражения','Грамматика B1'],
+ B2:['Абстрактная лексика','Договоры и переговоры','Связки и формальная речь','Деловая переписка','Разговорные выражения','Грамматика B2']};
+const V1=['ser','estar','tener','ir','hacer','venir','decir','ver'];
+const uOf=w=>{let t=UOV[w[1]]||UALIAS[w[8]]||w[8];if(t==='Глаголы основные')t=V1.includes(w[1])?'Глаголы 1':'Глаголы 2';return t};
+function units(L){const seen=[];lvIdx(L).forEach(i=>{const u=uOf(POOL[i]);if(!seen.includes(u))seen.push(u)});const base=UN[L]||[];const r=base.filter(u=>seen.includes(u)).concat(seen.filter(u=>!base.includes(u)));return r.filter(u=>!/^Грамматика/.test(u)).concat(r.filter(u=>/^Грамматика/.test(u)))}
+function uStat(L){const U=units(L),m={};U.forEach(u=>m[u]={t:0,k:0});lvIdx(L).forEach(i=>{const x=m[uOf(POOL[i])];x.t++;if(cs(POOL[i][1]).s==='k')x.k++});return U.map(u=>({u,t:m[u].t,k:m[u].k}))}
+// ступень открыта, пока предыдущая выучена минимум на 60%; идём по порядку до первой невыученной
+function uOpen(L){const o={};units(L).forEach(u=>o[u]=true);return o}
+function setFocus(u){ST.focus=u||null;try{lsSet()}catch(e){}}
+const wc=i=>POOL[i][1].replace(/[¿?¡!….]/g,' ').trim().split(/\s+/).length;
+const NUMORD='cero uno dos tres cuatro cinco seis siete ocho nueve diez once doce trece catorce quince dieciséis diecisiete dieciocho diecinueve veinte veintiuno veintidós veintitrés veinticuatro veinticinco veintiséis veintisiete veintiocho veintinueve treinta cuarenta cincuenta sesenta setenta ochenta noventa'.split(' ');
+function order(){const o=[];LV.forEach(L=>{units(L).forEach(u=>{const a=lvIdx(L).filter(i=>uOf(POOL[i])===u);a.map((i,k)=>[i,k]).sort((x,y)=>u.startsWith('Числа')?(NUMORD.indexOf(POOL[x[0]][1])+1||99)-(NUMORD.indexOf(POOL[y[0]][1])+1||99)||wc(x[0])-wc(y[0]):wc(x[0])-wc(y[0])||x[1]-y[1]).forEach(x=>o.push(x[0]))})});return o}
+function stgStat(L){return uStat(L)}
 let mode='feed';
 const learnIdx=()=>idxs().filter(i=>cs(POOL[i][1]).s==='l');
 function pick(ex){
@@ -518,7 +605,7 @@ function pick(ex){
  const dl=I.filter(i=>ok(i)&&ST_(i).s==='l'&&ST_(i).d<=step).sort((a,b)=>ST_(a).d-ST_(b).d);if(dl.length)return dl[0];
  const dk=I.filter(i=>ok(i)&&ST_(i).s==='k'&&ST_(i).d<=step).sort((a,b)=>ST_(a).d-ST_(b).d);if(dk.length&&Math.random()<.5)return dk[0];
  const O=order();
- const nw=O.find(i=>ok(i)&&ST_(i).s==='n'&&POOL[i][7]===cl);if(nw!==undefined)return nw;
+ const so=uOpen(cl);let nw;if(ST.focus){nw=O.find(i=>ok(i)&&ST_(i).s==='n'&&uOf(POOL[i])===ST.focus);if(nw===undefined)ST.focus=null}if(nw===undefined)nw=O.find(i=>ok(i)&&ST_(i).s==='n'&&POOL[i][7]===cl&&so[uOf(POOL[i])]);if(nw!==undefined)return nw;
  const al=I.filter(i=>ok(i)&&ST_(i).s==='l').sort((a,b)=>ST_(a).d-ST_(b).d);if(al.length)return al[0];
  const nw2=O.find(i=>ok(i)&&ST_(i).s==='n');if(nw2!==undefined)return nw2;
  const ak=I.filter(i=>ok(i)&&ST_(i).s==='k').sort((a,b)=>ST_(a).d-ST_(b).d);if(ak.length)return ak[0];
@@ -538,7 +625,7 @@ function say(t,force){
 const app=$('#app');
 const ICON={"home": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z\"/></svg>", "play": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4\" y=\"5\" width=\"16\" height=\"14\" rx=\"3\"/><path d=\"M10 9.5l5 2.5-5 2.5z\"/></svg>", "words": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 6h14M5 12h14M5 18h9\"/></svg>", "map": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 20V10M6 20V14M18 20V5\"/></svg>"};
 
-function go(s){window._scr=s;app.classList.toggle('playing',s==='play');({home,play,words,study}[s])();nav(s==='study'?'words':s);window.scrollTo(0,0)}
+function go(s){window._scr=s;app.classList.toggle('playing',s==='play');({home,play,words,study,gram:grammar}[s])();nav(s==='study'?'words':s);window.scrollTo(0,0)}
 function level(){return Math.floor(ST.xp/100)+1}
 function dayTick(){
  const t=today();
@@ -551,12 +638,13 @@ function streakTouch(){
  ST.last=t;ST.best=Math.max(ST.best||0,ST.streak);
 }
 function streakNow(){const t=today();if(!ST.last)return 0;const d=dayDiff(ST.last,t);return d<=1?ST.streak:0}
+ICON.gram=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4zM20 5h-6a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h6z"/></svg>`;
 ICON.study=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4zM20 5h-6a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h6z"/></svg>`;
 function nav(active){
  let n=document.querySelector('.nav');if(n)n.remove();
  if(active==='play')return;
  n=document.createElement('div');n.className='nav';
- n.innerHTML=[['home','Главная'],['play','Играть'],['words','Слова']].map(([k,l])=>`<button data-g="${k}" aria-label="${l}" class="${k===active?'on':''}">${ICON[k]}</button>`).join('');
+ n.innerHTML=[['home','Главная'],['play','Играть'],['words','Слова'],['gram','Правила']].map(([k,l])=>`<button data-g="${k}" aria-label="${l}" class="${k===active?'on':''}">${ICON[k]}</button>`).join('');
  n.querySelectorAll('button').forEach(b=>b.onclick=()=>{if(window._scr==='play')save();if(b.dataset.g==='play')startPlay('feed');else go(b.dataset.g)});
  document.body.appendChild(n);
 }
@@ -569,12 +657,11 @@ const LKI='<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><p
 function home(){
  dayTick();
  const cl=curLv(),st=LV.map(L=>[L,lvStat(L)]);
- const tops={};lvIdx(cl).forEach(i=>{const w=POOL[i];(tops[w[8]]=tops[w[8]]||{t:0,k:0});tops[w[8]].t++;if(cs(w[1]).s==='k')tops[w[8]].k++});
+ const us=uStat(cl).filter(x=>x.t>0),u0=Math.max(0,us.findIndex(x=>x.k<x.t)),tops={};us.slice(u0,u0+4).forEach(x=>{tops[x.u]={t:x.t,k:x.k}});
  const lcards=st.map(([L,s],q)=>{
   const pct=s.t?Math.round(s.k/s.t*100):0,col=LCOL[L];
   if(L===cl&&s.t)return `<div class="lx cur"><div class="rw"><span class="bx">${L}</span><span class="t"><b>Уровень ${L}</b><span>${s.k} из ${s.t} ${plw(s.t)}</span></span><span class="pc">${pct}%</span></div><div class="tr"><i data-w="${pct}"></i></div>`+Object.entries(tops).slice(0,4).map(([n,v])=>`<div class="tp2"><span>${esc(n)}</span><div class="trk"><i data-w="${Math.round(v.k/v.t*100)}" style="background:var(--lime)"></i></div></div>`).join('')+`</div>`;
-  if(s.t&&s.k===s.t)return `<div class="lx dn"><span class="bx">${L}</span><span class="t"><b>Уровень ${L}</b><span>Пройден · ${s.k} из ${s.t}</span></span><span class="lar">✓</span></div>`;
-  return `<div class="lx lk"><span class="bx">${L}</span><span class="t"><b>Уровень ${L}</b><span>${s.t?'Откроется после '+LV[Math.max(0,q-1)]+' · '+s.t+' карточек':'Скоро'}</span></span><span class="lkb">${LKI}</span></div>`}).join('');
+  return `<div class="lx dn" onclick="setLv('${L}')" style="cursor:pointer"><span class="bx">${L}</span><span class="t"><b>Уровень ${L}</b><span>${s.k} из ${s.t} ${plw(s.t)}</span></span><span class="lar" style="font-size:13px;font-weight:700">${pct}%</span></div>`}).join('');
  const goalP=Math.min(100,Math.round(ST.tn/GOAL*100));
  const rep=learnIdx().length,kn=KW.size;
  const qs=(window._quests||[]).map(q=>`<div class="q">${esc(q.text)}</div>`).join('');
@@ -585,11 +672,12 @@ function home(){
  <div class="gl"><span>Цель на сегодня</span><span style="color:#f4f3ee">${Math.min(ST.tn,GOAL)} из ${GOAL}</span></div><div class="gb"><i data-w="${goalP}"></i></div></div>
  <button class="hxb go" id="pl"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>Продолжить · ${cl}</button>
  <button class="hxb rp" id="rp">Повторить ошибки <span class="bn">${rep}</span></button>
+ <button class="hxb rp" id="tp">Выбрать тему</button>
  <div class="kw"><span class="gw"></span><span class="hl2">¡hola!</span><span class="n">${kn}</span><span class="ln"></span><span class="tt"><small>Вы знаете</small><span>${plw(kn)} на испанском</span></span></div>
  <div class="sec" id="map"><b>Уровни</b><span class="sm">A1 → B2</span></div>${lcards}
  ${qs||nc?`<div class="card0"><b style="font-weight:500">От репетитора</b>${nc?`<div class="sm" style="margin-top:6px">Новых карточек из чата: ${nc}</div>`:''}${qs}</div>`:''}
  <div class="card0"><b style="font-weight:500">Мои данные</b><div class="sm" style="margin-top:6px">Прогресс хранится только в вашем браузере и никому не отправляется. Сохраните копию, чтобы перенести его на другое устройство.</div><div class="row" style="margin-top:10px"><button class="btn" id="ex" style="padding:10px">Экспорт</button><button class="btn" id="im" style="padding:10px">Импорт</button></div><button class="btn" id="rs" style="margin-top:8px;padding:10px;color:var(--no)">Сбросить прогресс</button><input type="file" id="fi" accept="application/json" hidden></div>`;
- dataBtns();$('#pl').onclick=()=>startPlay('feed');$('#rp').onclick=()=>startPlay('rep');
+ dataBtns();$('#pl').onclick=()=>startPlay('feed');$('#rp').onclick=()=>startPlay('rep');$('#tp').onclick=()=>ONB.topics();
  document.querySelectorAll('.hx i[data-w],.lx i[data-w]').forEach(e=>{const w=e.dataset.w;requestAnimationFrame(()=>requestAnimationFrame(()=>e.style.width=w+'%'))});
 }
 function dataBtns(){
@@ -624,6 +712,210 @@ function words(){
  $('#bk').onclick=()=>go('home');$('#st2').onclick=()=>go('study');
  document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;draw()});draw();
 }
+// ---------- grammar data (A1)
+const GP=[['Глагол','verbo','В'],['Существительное','sustantivo','С'],['Прилагательное','adjetivo','П'],['Местоимение','pronombre','М'],['Артикль','artículo','А'],['Предлог','preposición','Д'],['Наречие','adverbio','Н'],['Числительное','numeral','Ч'],['Союз','conjunción','Я']];
+const pron6=['yo','tú','él / ella / usted','nosotros','vosotros','ellos / ellas / ustedes'];
+const conj=(t,f,x)=>({t,r:pron6.map((p,i)=>[p,f[i]])});
+const GR=[
+{id:'art-def',lv:'A1',p:'Артикль',n:0,title:'Определённый артикль: el, la, los, las',short:'Когда мы говорим про конкретный предмет',
+ text:'Артикль стоит перед существительным и согласуется с ним по роду и числу. Он как «этот самый» в русском: el piso — эта самая квартира.',
+ sch:{k:'g2',t:'Схема · какой артикль',c:[{h:'Мужской',b:'el · los',w:['el piso → los pisos','el libro → los libros']},{h:'Женский',b:'la · las',f:1,w:['la casa → las casas','la mesa → las mesas']}]},
+ x:{t:'Исключения',note:'Перед ударным <b>a</b> у женских слов ставят <b>el</b>, но слово остаётся женским: <b>el agua fría</b>, но <b>las aguas</b>.',chips:['el agua','el águila','el área']},
+ ex:[['El piso es caro.','Квартира дорогая.'],['La casa es grande.','Дом большой.'],['Los libros son nuevos.','Книги новые.']]},
+{id:'art-indef',lv:'A1',p:'Артикль',n:3,title:'Неопределённый артикль: un, una',short:'Когда предмет «какой-то» или «один»',
+ text:'Un и una значат «один, какой-то». Мы ставим их, когда называем предмет впервые или он не конкретный.',
+ sch:{k:'g2',t:'Схема · un или una',c:[{h:'Мужской',b:'un · unos',w:['un contrato','unos contratos']},{h:'Женский',b:'una · unas',f:1,w:['una oferta','unas ofertas']}]},
+ ex:[['Tengo una hermana.','У меня есть сестра.'],['Necesito un contrato.','Мне нужен договор.']]},
+{id:'n-gen',lv:'A1',p:'Существительное',n:2,title:'Род: мужской и женский',short:'Когда ставить el, а когда la',
+ text:'У каждого существительного есть род. Большинство слов на -o мужские, на -a женские. От рода зависит артикль.',
+ sch:{k:'g2',t:'Схема · как определить род',c:[{h:'Мужской · el',b:'-o',w:['el lib[ro]','el pis[o]']},{h:'Женский · la',b:'-a',f:1,w:['la cas[a]','la mes[a]']}]},
+ x:{t:'Исключения',chips:['el día','el mapa','el problema','el idioma','la mano','la foto','la moto'],note:'Слова на -ma из греческого (problema, idioma, mapa) мужского рода, хотя оканчиваются на -a.'},
+ ex:[['El piso es caro.','Квартира дорогая.'],['La casa es grande.','Дом большой.'],['Tengo un problema con el contrato.','У меня проблема с договором.']]},
+{id:'n-pl',lv:'A1',p:'Существительное',n:6,title:'Множественное число',short:'Как сказать «много»: -s, -es',
+ text:'Чтобы сказать «много», меняем окончание слова.',
+ sch:{k:'rows',t:'Схема · как образуется множественное число',r:[['Оканчивается на гласную','casa','+ s','casas'],['Оканчивается на согласную','ciudad','+ es','ciudades'],['Оканчивается на -z','lápiz','z → ces','lápices']]},
+ x:{t:'Не меняются',rows:[['el lunes','lunes','los lunes'],['el paraguas','paraguases','los paraguas']]},
+ ex:[['Tengo dos hermanas.','У меня две сестры.'],['Trabajo de lunes a viernes.','Я работаю с понедельника по пятницу.']]},
+{id:'p-pers',lv:'A1',p:'Местоимение',n:0,title:'Личные: я, ты, он',short:'yo, tú, él, ella, usted…',
+ text:'Личные местоимения отвечают на вопрос «кто?». В испанском их обычно опускают: форма глагола уже показывает лицо.',
+ tbl:{t:'Местоимения',r:[['я','yo'],['ты','tú'],['он / она','él / ella'],['Вы (вежливо)','usted'],['мы','nosotros'],['вы','vosotros'],['они','ellos / ellas']]},
+ sch:{k:'rows',t:'Схема · говорим без местоимения',r:[['С местоимением (для акцента)','Yo hablo español','',''],['Обычная речь','Hablo español','','']]},
+ x:{t:'Когда «ты», а когда «Вы»',note:'<b>tú</b> — друзья, семья, ровесники.<br><b>usted</b> — незнакомые, клиенты, старшие; глагол ставим как для «он / она».'},
+ ex:[['Hablo español en el trabajo.','Я говорю по-испански на работе.'],['¿Usted trabaja aquí?','Вы здесь работаете?']]},
+{id:'p-poss',lv:'A1',p:'Местоимение',n:8,title:'Притяжательные: мой, твой',short:'mi, tu, su, nuestro…',
+ text:'Притяжательные согласуются с тем, что принадлежит, а не с владельцем: mi casa, mis casas.',
+ sch:{k:'rows',t:'Схема · мой, твой, его',r:[['мой','mi casa','+ s','mis casas'],['твой','tu piso','+ s','tus pisos'],['его, её, Ваш','su coche','+ s','sus coches']]},
+ x:{t:'Меняется по роду',note:'<b>nuestro</b> и <b>vuestro</b> меняются как прилагательные: nuestro piso, nuestra casa, nuestros pisos, nuestras casas.'},
+ ex:[['Mi madre vive en Valencia.','Моя мама живёт в Валенсии.'],['Nuestra casa es pequeña.','Наш дом маленький.']]},
+{id:'p-dem',lv:'A1',p:'Местоимение',n:14,title:'Указательные: этот, тот',short:'este, ese, aquel',
+ text:'Выбираем слово по расстоянию до предмета и согласуем по роду и числу.',
+ sch:{k:'rows',t:'Схема · близко и далеко',r:[['Рядом со мной','este piso','','esta casa'],['Рядом с тобой','ese piso','','esa casa'],['Далеко от обоих','aquel piso','','aquella casa']]},
+ ex:[['Este piso es caro.','Эта квартира дорогая.'],['Esa casa es grande.','Тот дом большой.']]},
+{id:'v-ar',lv:'A1',p:'Глагол',n:4,title:'Presente: глаголы на -ar',short:'hablar, trabajar, estudiar',
+ text:'Убираем -ar и добавляем окончание по лицу. Так спрягаются почти все глаголы на -ar.',
+ tbl:conj('hablar',['habl[o]','habl[as]','habl[a]','habl[amos]','habl[áis]','habl[an]']),
+ x:{t:'Исключения',rows:[['dar','do','doy'],['estar','esto','estoy'],['jugar','jugo','juego']]},
+ ex:[['Hablo español en el trabajo.','Я говорю по-испански на работе.'],['Mi hermana estudia en Barcelona.','Моя сестра учится в Барселоне.'],['Trabajamos de lunes a viernes.','Мы работаем с понедельника по пятницу.']]},
+{id:'v-er',lv:'A1',p:'Глагол',n:10,title:'Presente: глаголы на -er',short:'comer, beber, leer',
+ text:'Убираем -er и добавляем окончание. Отличие от -ar: в формах nosotros и vosotros.',
+ tbl:conj('comer',['com[o]','com[es]','com[e]','com[emos]','com[éis]','com[en]']),
+ x:{t:'Исключения',rows:[['ver','vo','veo'],['saber','sabo','sé']]},
+ ex:[['Como en casa.','Я ем дома.'],['Bebemos agua.','Мы пьём воду.']]},
+{id:'v-ir',lv:'A1',p:'Глагол',n:12,title:'Presente: глаголы на -ir',short:'vivir, escribir, abrir',
+ text:'Почти как -er, но nosotros и vosotros оканчиваются на -imos и -ís.',
+ tbl:conj('vivir',['viv[o]','viv[es]','viv[e]','viv[imos]','viv[ís]','viv[en]']),
+ ex:[['Vivo en Barcelona.','Я живу в Барселоне.'],['Escribimos un correo.','Мы пишем письмо.']]},
+{id:'v-ser',lv:'A1',p:'Глагол',n:1,title:'Глагол ser: быть',short:'Кто ты и что это',
+ text:'Ser — «быть» для постоянного: профессия, откуда ты, какой предмет, который час. Спрягается неправильно.',
+ tbl:conj('ser',['{soy}','{eres}','{es}','{somos}','{sois}','{son}']),
+ ex:[['Soy ingeniero.','Я инженер.'],['Somos de Barcelona.','Мы из Барселоны.'],['Es una oferta buena.','Это хорошее предложение.']]},
+{id:'v-estar',lv:'A1',p:'Глагол',n:5,title:'Глагол estar: быть, находиться',short:'Где ты и как ты',
+ text:'Estar — «быть» для места и состояния. В форме yo неправильный: estoy.',
+ tbl:conj('estar',['{estoy}','est[ás]','est[á]','est[amos]','est[áis]','est[án]']),
+ ex:[['Estoy en la obra.','Я на стройке.'],['¿Cómo estás?','Как дела?']]},
+{id:'v-serestar',lv:'A1',p:'Глагол',n:9,title:'Ser или estar',short:'Постоянное и временное',
+ text:'По-русски «быть» один, по-испански два. Ser — что это за человек или предмет. Estar — где он и в каком он состоянии.',
+ sch:{k:'rows',t:'Схема · ser или estar',r:[['Профессия, национальность','Soy ingeniero','ser',''],['Откуда','Soy de Serbia','ser',''],['Где находится','Estoy en casa','estar',''],['Настроение, состояние','Estoy cansado','estar','']]},
+ ex:[['El contrato es largo.','Договор длинный.'],['El contrato está en la oficina.','Договор в офисе.']]},
+{id:'v-tener',lv:'A1',p:'Глагол',n:7,title:'Глагол tener: иметь',short:'У меня есть… Я должен…',
+ text:'Tener — «иметь, у меня есть». В форме yo окончание -go, а в tú, él, ellos меняется корень: e → ie.',
+ tbl:conj('tener',['{tengo}','t{ie}n[es]','t{ie}n[e]','ten[emos]','ten[éis]','t{ie}n[en]']),
+ sch:{k:'rows',t:'Схема · tener que',r:[['tener que + глагол = нужно, должен','Tengo que trabajar','','']]},
+ ex:[['Tengo una reunión mañana.','У меня завтра встреча.'],['Tengo que llamar al cliente.','Мне нужно позвонить клиенту.']]},
+{id:'v-ir2',lv:'A1',p:'Глагол',n:11,title:'Глагол ir: идти, ехать',short:'Куда ты идёшь',
+ text:'Ir — «идти, ехать». Полностью неправильный.',
+ tbl:conj('ir',['{voy}','{vas}','{va}','{vamos}','{vais}','{van}']),
+ sch:{k:'rows',t:'Схема · ir a',r:[['ir a + глагол = собираюсь','Voy a trabajar','',''],['ir a + место = иду в','Voy a la oficina','','']]},
+ ex:[['Voy a la obra.','Я иду на стройку.'],['Vamos a comer.','Мы идём поесть.']]},
+{id:'v-hacer',lv:'A1',p:'Глагол',n:13,title:'Глагол hacer: делать',short:'Что ты делаешь',
+ text:'Hacer — «делать». Только yo неправильная: hago.',
+ tbl:conj('hacer',['{hago}','h[aces]','h[ace]','h[acemos]','h[acéis]','h[acen]']),
+ ex:[['¿Qué haces hoy?','Что ты делаешь сегодня?'],['Hago un café.','Я делаю кофе.']]},
+{id:'v-gustar',lv:'A1',p:'Глагол',n:3,re:/\bgust/i,title:'Глагол gustar: нравиться',short:'Me gusta, me gustan',
+ text:'Gustar работает «наоборот»: по-русски «мне нравится кофе». Предмет — подлежащее, поэтому форма глагола зависит от него.',
+ sch:{k:'rows',t:'Схема · gusta или gustan',r:[['Один предмет или действие','Me gusta el café','gusta',''],['Много предметов','Me gustan los parques','gustan',''],['Действие','Me gusta estudiar','gusta','']]},
+ x:{t:'Кому нравится',note:'<b>me</b> — мне, <b>te</b> — тебе, <b>le</b> — ему, ей, Вам, <b>nos</b> — нам, <b>os</b> — вам, <b>les</b> — им.'},
+ ex:[['Me gusta la música pop.','Мне нравится поп-музыка.'],['Me gustan los parques.','Мне нравятся парки.']]},
+{id:'v-hay',lv:'A1',p:'Глагол',n:6,re:/\bhay\b/i,title:'Hay: есть, имеется',short:'Есть ли банк рядом?',
+ text:'Hay — «есть, имеется». Форма не меняется ни для одного предмета, ни для многих.',
+ sch:{k:'rows',t:'Схема · hay',r:[['Один предмет','Hay un banco aquí','',''],['Много предметов','Hay dos habitaciones','',''],['Вопрос','¿Hay metro?','','']]},
+ x:{t:'Не путать',note:'<b>Hay</b> — есть где-то вообще. <b>Está</b> — где находится известный предмет: <b>El banco está allí</b>.'},
+ ex:[['Hay un supermercado cerca.','Рядом есть супермаркет.'],['No hay problema.','Нет проблем.']]},
+{id:'v-ie',lv:'A1',p:'Глагол',n:18,title:'Корень e → ie',short:'querer, pensar, empezar',
+ text:'Гласная в корне меняется под ударением: e → ie. У nosotros и vosotros форма обычная.',
+ tbl:conj('querer',['qu{ie}r[o]','qu{ie}r[es]','qu{ie}r[e]','quer[emos]','quer[éis]','qu{ie}r[en]']),
+ x:{t:'Не по этому правилу',rows:[['tener','teno','tengo'],['venir','venio','vengo'],['decir','decio','digo']]},
+ ex:[['Quiero un café con leche.','Я хочу кофе с молоком.'],['La reunión empieza a las nueve.','Встреча начинается в девять.']]},
+{id:'v-ue',lv:'A1',p:'Глагол',n:20,title:'Корень o → ue',short:'poder, volver, dormir',
+ text:'Гласная в корне меняется под ударением: o → ue. У nosotros и vosotros форма обычная.',
+ tbl:conj('poder',['p{ue}d[o]','p{ue}d[es]','p{ue}d[e]','pod[emos]','pod[éis]','p{ue}d[en]']),
+ ex:[['¿Puedes ayudarme?','Ты можешь мне помочь?'],['Vuelvo a casa a las seis.','Я возвращаюсь домой в шесть.']]},
+{id:'v-go',lv:'A1',p:'Глагол',n:22,title:'Глаголы с -go в форме yo',short:'hacer, poner, salir, venir',
+ text:'У некоторых глаголов только форма yo получает -go. Остальные формы обычные.',
+ sch:{k:'rows',t:'Схема · форма yo',r:[['делать','hacer','→','hago'],['ставить','poner','→','pongo'],['выходить','salir','→','salgo'],['приходить','venir','→','vengo'],['приносить','traer','→','traigo']]},
+ x:{t:'Не просто -go',rows:[['decir','decgo','digo']]},
+ ex:[['Salgo del trabajo a las cinco.','Я выхожу с работы в пять.'],['Pongo el contrato en la mesa.','Я кладу договор на стол.']]},
+{id:'v-no',lv:'A1',p:'Глагол',n:8,title:'Отрицание',short:'No hablo francés',
+ text:'Чтобы отрицать, ставим <b>no</b> перед глаголом. Других слов не нужно.',
+ sch:{k:'rows',t:'Схема · утверждение и отрицание',r:[['Утверждение','Hablo francés','',''],['Отрицание','No hablo francés','no','']]},
+ x:{t:'Двойное отрицание',note:'В испанском можно и нужно ставить два отрицания: <b>No tengo nada</b> (у меня ничего нет), <b>No hablo nunca</b> (я никогда не говорю).'},
+ ex:[['No tengo tiempo.','У меня нет времени.'],['No trabajo los domingos.','Я не работаю по воскресеньям.']]},
+{id:'a-agr',lv:'A1',p:'Прилагательное',n:5,title:'Прилагательное меняется как существительное',short:'rojo, roja, rojos, rojas',
+ text:'Прилагательное согласуется по роду и числу с существительным: el piso rojo, la casa roja.',
+ sch:{k:'rows',t:'Схема · rojo',r:[['Мужской, один','el piso','','roj[o]'],['Женский, один','la casa','','roj[a]'],['Мужской, много','los pisos','','roj[os]'],['Женский, много','las casas','','roj[as]']]},
+ x:{t:'Не меняются по роду',chips:['grande','fácil','importante','verde'],note:'Слова на -e и на согласную одинаковы для мужского и женского: <b>un piso grande</b>, <b>una casa grande</b>.'},
+ ex:[['El piso es pequeño.','Квартира маленькая.'],['Las casas son caras.','Дома дорогие.']]},
+{id:'a-pos',lv:'A1',p:'Прилагательное',n:15,title:'Где стоит прилагательное',short:'После существительного',
+ text:'Обычно прилагательное стоит после существительного: una casa grande.',
+ sch:{k:'rows',t:'Схема · порядок слов',r:[['Обычно','una casa','','grande'],['Обычно','un contrato','','largo']]},
+ x:{t:'Короткая форма перед словом',rows:[['bueno','un bueno día','un buen día'],['malo','un malo día','un mal día'],['grande','una grande casa','una gran casa']]},
+ ex:[['Es un buen contrato.','Это хороший договор.'],['Vivo en una casa grande.','Я живу в большом доме.']]},
+{id:'pr-basic',lv:'A1',p:'Предлог',n:6,title:'Предлоги a, de, en, con',short:'Куда, откуда, где, с кем',
+ text:'Предлоги связывают слова. Выучите четыре самых частых.',
+ sch:{k:'rows',t:'Схема · четыре главных предлога',r:[['a — куда, кому','Voy a Madrid','',''],['de — откуда, чей','Soy de Serbia','',''],['en — где, на, в','Estoy en casa','',''],['con — с кем','Hablo con el jefe','','']]},
+ x:{t:'Сливаются с el',rows:[['a + el','a el','al'],['de + el','de el','del']]},
+ ex:[['Voy al banco.','Я иду в банк.'],['Es la casa del jefe.','Это дом начальника.']]},
+{id:'pr-pp',lv:'A1',p:'Предлог',n:25,title:'Por и para',short:'Причина и цель',
+ text:'Оба слова можно перевести как «для» или «за», но смысл разный.',
+ sch:{k:'rows',t:'Схема · по или для',r:[['para — цель, кому','Es para ti','para',''],['por — причина, через','Gracias por todo','por','']]},
+ ex:[['Trabajo para una empresa.','Я работаю в компании.'],['Gracias por tu ayuda.','Спасибо за помощь.']]},
+{id:'adv-mm',lv:'A1',p:'Наречие',n:9,title:'Muy и mucho',short:'Очень и много',
+ text:'<b>Muy</b> — «очень» перед прилагательным и наречием. <b>Mucho</b> — «много» после глагола.',
+ sch:{k:'rows',t:'Схема · muy или mucho',r:[['muy + прилагательное','Es muy caro','muy',''],['muy + наречие','Hablo muy bien','muy',''],['глагол + mucho','Trabajo mucho','mucho','']]},
+ x:{t:'Нельзя',note:'Нельзя говорить <b>muy mucho</b>. Скажите <b>muchísimo</b> («очень много»).'},
+ ex:[['El café es muy bueno.','Кофе очень хороший.'],['Trabajo mucho.','Я много работаю.']]},
+{id:'adv-bm',lv:'A1',p:'Наречие',n:12,title:'Bien, mal и наречия места',short:'bien, mal, aquí, allí',
+ text:'Наречия не меняются по роду и числу.',
+ sch:{k:'rows',t:'Схема · наречия',r:[['хорошо','bien','',''],['плохо','mal','',''],['здесь','aquí','',''],['там','allí','','']]},
+ ex:[['Hablo español muy bien.','Я очень хорошо говорю по-испански.'],['El banco está allí.','Банк там.']]},
+{id:'num-1',lv:'A1',p:'Числительное',n:2,title:'Числа от 0 до 15',short:'cero, uno, dos, tres…',
+ text:'Числа до 15 — отдельные слова.',
+ tbl:{t:'Числа',r:[['0','cero'],['1','uno'],['2','dos'],['3','tres'],['4','cuatro'],['5','cinco'],['6','seis'],['7','siete'],['8','ocho'],['9','nueve'],['10','diez'],['11','once'],['12','doce'],['13','trece'],['14','catorce'],['15','quince']]},
+ x:{t:'Uno меняется',note:'Перед существительным <b>uno</b> становится <b>un / una</b>: <b>un euro</b>, <b>una hora</b>.'},
+ ex:[['Tengo dos hermanos.','У меня два брата.'],['Son las tres.','Три часа.']]},
+{id:'num-2',lv:'A1',p:'Числительное',n:16,title:'Числа от 16 до 100',short:'dieciséis, veinte, treinta…',
+ text:'С 16 до 29 число пишется одним словом. Начиная с 31 соединяем десятки и единицы через <b>y</b>.',
+ sch:{k:'rows',t:'Схема · как собрать число',r:[['16','dieciséis','',''],['20','veinte','',''],['21','veintiuno','',''],['30','treinta','',''],['31','treinta y uno','','y']]},
+ ex:[['Tengo treinta años.','Мне тридцать лет.'],['Son cuarenta y cinco euros.','Это сорок пять евро.']]},
+{id:'conj-1',lv:'A1',p:'Союз',n:10,title:'Союзы y, o, pero, porque',short:'и, или, но, потому что',
+ text:'Союзы соединяют слова и предложения.',
+ sch:{k:'rows',t:'Схема · союзы',r:[['и','y','',''],['или','o','',''],['но','pero','',''],['потому что','porque','','']]},
+ x:{t:'Меняются перед некоторыми словами',rows:[['y + i-','padre y hijo','padre e hijo'],['o + o-','siete o ocho','siete u ocho']]},
+ ex:[['Quiero café y agua.','Я хочу кофе и воду.'],['Trabajo mucho, pero me gusta.','Я много работаю, но мне нравится.']]}
+];
+
+// ---------- grammar screen
+const GC={'Глагол':'#c8f31d','Существительное':'#ffb04d','Прилагательное':'#6cb4ff','Местоимение':'#b79cff','Артикль':'#4fd6b0','Предлог':'#ff8fb1','Наречие':'#ffd75e','Числительное':'#8be26f','Союз':'#c9c8c0'};
+const gSeen=()=>POOL.filter(w=>cs(w[1]).s!=='n');
+function gOpen(r,seen,txt){return seen.length>=r.n||(r.re&&r.re.test(txt))}
+const gFmt=s=>esc(s).replace(/\[([^\]]+)\]/g,'<u>$1</u>').replace(/\{([^}]+)\}/g,'<u class="x">$1</u>');
+const GSPK='<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>';
+const GCH='<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const GWARN='<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M12 3l10 18H2z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M12 10v4M12 17.5v.01" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>';
+function gBody(r){
+ let h=`<div class="gm-t">${r.text}</div>`;
+ if(r.tbl)h+=`<div class="gm-l">${esc(r.tbl.t)}</div><div class="gm-tb">${r.tbl.r.map(([a,b])=>`<div><i>${esc(a)}</i><b>${gFmt(b)}</b></div>`).join('')}</div>`;
+ if(r.sch){const s=r.sch;h+=`<div class="gm-sch"><div class="gm-st">${esc(s.t)}</div>`;
+  if(s.k==='g2')h+=`<div class="gm-g2">${s.c.map(c=>`<div class="${c.f?'f':''}"><small>${esc(c.h)}</small><big>${esc(c.b)}</big>${c.w.map(w=>`<p>${gFmt(w)}</p>`).join('')}</div>`).join('')}</div>`;
+  else h+=s.r.map(([e,w,a,r2])=>`<div class="gm-rw"><span class="e">${esc(e)}</span><span class="w">${gFmt(w)}</span>${a?`<span class="a">${esc(a)}</span>`:''}${r2?`<span class="r">${gFmt(r2)}</span>`:''}</div>`).join('');
+  h+='</div>'}
+ if(r.x){const x=r.x;h+=`<div class="gm-xb"><h6>${GWARN}${esc(x.t)}</h6>`;
+  if(x.rows)h+=x.rows.map(([w,a,b])=>`<div class="gm-xr"><em>${esc(w)}</em><s>${esc(a)}</s><i>→</i><b>${esc(b)}</b></div>`).join('');
+  if(x.chips)h+='<div>'+x.chips.map(c=>`<span class="gm-ch">${esc(c)}</span>`).join('')+'</div>';
+  if(x.note)h+=`<div class="gm-xn">${x.note}</div>`;
+  h+='</div>';
+  if(x.rows||x.chips)h+='<div class="gm-lg"><span><u style="color:#c8f31d">зелёное</u> — по правилу</span><span><u style="color:#ff9a2e">оранжевое</u> — исключение</span></div>'}
+ h+=`<div class="gm-l">Примеры</div>`+r.ex.map(([a,b],i)=>`<div class="gm-ex"><b>${esc(a)}<button class="gm-sp" data-s="${esc(a)}" aria-label="Произнести">${GSPK}</button></b><small>${esc(b)}</small></div>`).join('');
+ return h;
+}
+function grammar(){
+ const seen=gSeen(),txt=seen.map(w=>w[1]+' '+w[4]).join(' ');
+ const part=window._gp||'Все',lv=window._gl||'A1';
+ const rules=GR.filter(r=>r.lv===lv&&(part==='Все'||r.p===part));
+ const all=GR.filter(r=>r.lv===lv);
+ const st=r=>gOpen(r,seen,txt),open=all.filter(st).length;
+ const chip=(name,list)=>{const o=list.filter(st).length,t=list.length,pc=t?Math.round(o/t*100):0;return `<button class="gm-pc${name===part?' on':''}" data-p="${esc(name)}"><i style="width:${pc}%"></i><span>${esc(name)}</span><em>${o}/${t}</em></button>`};
+ const chips=chip('Все',all)+GP.map(p=>chip(p[0],all.filter(r=>r.p===p[0]))).join('');
+ const lvs=LV.map(L=>`<button class="gm-lv${L===lv?' on':''}${GR.some(r=>r.lv===L)?'':' soon'}" data-l="${L}">${L}</button>`).join('');
+ const hasLv=GR.some(r=>r.lv===lv);
+ const list=!hasLv?`<div class="card0"><b style="font-weight:500">Скоро</b><div class="sm" style="margin-top:6px">Правила уровня ${lv} появятся позже. Сейчас доступен A1.</div></div>`:
+  (()=>{let lk=0,hid=0;return rules.map((r,i)=>{const o=st(r);
+   if(!o&&++lk>2){hid++;return ''}
+   if(!o)return `<div class="gm-rl lock"><div class="gm-hd"><span class="gm-nb"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><rect x="5" y="11" width="14" height="9.5" rx="3" fill="currentColor"/></svg></span><span class="gm-tt"><b style="filter:blur(4px)">${esc(r.title)}</b><span>Скрыто · откроется, когда встретите в игре</span></span></div></div>`;
+   return `<div class="gm-rl" data-r="${r.id}"><button class="gm-hd"><span class="gm-nb" style="color:${GC[r.p]};box-shadow:inset 0 0 0 1.5px ${GC[r.p]}55">${GP.find(p=>p[0]===r.p)[2]}</span><span class="gm-tt"><b>${esc(r.title)}</b><span>${esc(r.short)}</span><em class="gm-tg" style="color:${GC[r.p]}">${esc(r.p)} · ${esc(GP.find(p=>p[0]===r.p)[1])}</em></span><span class="gm-chev">${GCH}</span></button><div class="gm-bw"><div>${gBody(r)}</div></div></div>`}).join('')+(hid?`<div class="gm-more">И ещё ${hid} скрытых — откроются по ходу игры</div>`:'')})();
+ const pc=all.length?Math.round(open/all.length*100):0;const nxt=all.filter(r=>!st(r)).sort((a,b)=>a.n-b.n)[0];
+ app.innerHTML=`<div class="hdr"><div><div class="sm">Все правила испанского</div><h1>Грамматика</h1></div></div>
+ <div class="gm-top"><div class="gm-wd" aria-hidden="true">${['hola','gracias','casa','verbo','regla','ayer','trabajo','amigo'].map((w,i)=>`<span style="left:${(i*37+8)%86}%;top:${(i*29+6)%78}%;font-size:${12+i%3*4}px;animation-delay:-${i*1.3}s">${w}</span>`).join('')}</div>
+ <div class="gm-ring"><svg viewBox="0 0 84 84" width="84" height="84"><circle cx="42" cy="42" r="36" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="8"/><circle class="gm-rg" cx="42" cy="42" r="36" fill="none" stroke="#c8f31d" stroke-width="8" stroke-linecap="round" stroke-dasharray="226.2" stroke-dashoffset="226.2" data-o="${(226.2*(1-pc/100)).toFixed(1)}" transform="rotate(-90 42 42)"/></svg><b>${open}</b></div>
+ <span class="gm-tx"><small>Открыто правил</small><span class="gm-big2">из ${all.length} · ${pc}%</span><span class="gm-nx">${nxt?`Следующее откроется после ещё ${Math.max(1,nxt.n-seen.length)} карточек`:'Все правила уровня открыты'}</span></span></div>
+ <div class="gm-lvs">${lvs}</div><div class="gm-pcs">${chips}</div><div class="gm-list">${list}</div>`;
+ app.querySelectorAll('.gm-lv').forEach(b=>b.onclick=()=>{window._gl=b.dataset.l;window._gp='Все';grammar()});
+ app.querySelectorAll('.gm-pc').forEach(b=>b.onclick=()=>{window._gp=b.dataset.p;grammar()});
+ app.querySelectorAll('.gm-rl:not(.lock) .gm-hd').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
+ app.querySelectorAll('.gm-sp').forEach(b=>b.onclick=e=>{e.stopPropagation();say(b.dataset.s,true)});
+ requestAnimationFrame(()=>requestAnimationFrame(()=>app.querySelectorAll('.gm-rg').forEach(e=>e.style.strokeDashoffset=e.dataset.o)));
+}
+
 // ---------- play
 let front=null,back=null,busy=false,hold=false,combo=0,sg;
 const fast=matchMedia('(prefers-reduced-motion:reduce)').matches;const T=n=>fast?10:n;
@@ -746,7 +1038,7 @@ async function loadCards(){
  const loc=lsGet();
  if(loc&&loc.c){applyState(loc)}else{applyState({});seedState();lsSet()}
  go('home');
- 
+ try{if(window.ONB&&ONB.need())ONB.run()}catch(e){console.error(e)}
  if(dbm){sync='подключаю…';const s=$('#sync');if(s)s.textContent=sync;
   const before=ST.t;await pullDb();
   if(!ST.c||!Object.keys(ST.c).length){seedState()}
