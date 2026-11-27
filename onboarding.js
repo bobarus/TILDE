@@ -24,7 +24,7 @@ function need(){
 
 // ---------- стили
 const BASE=`
-#ob{position:fixed;inset:0;z-index:1000;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#e8eae4;color:#171716;font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.25}
+#ob{position:fixed;inset:0;z-index:1000;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:#e8eae4;color:#171716;font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.25}
 #ob *{box-sizing:border-box}
 #ob::before{content:"";position:fixed;right:-90px;top:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(200,243,29,.5),transparent 68%);pointer-events:none}
 #ob::after{content:"";position:fixed;left:-110px;bottom:-60px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(255,190,120,.4),transparent 68%);pointer-events:none}
@@ -63,7 +63,7 @@ function wl(seed){
 
 // ---------- каркас
 function mount(){
- if(ob)return;
+ if(ob&&ob.isConnected)return;
  ob=document.createElement('div');ob.id='ob';document.body.appendChild(ob);
  ob.addEventListener('click',onClick);
  ob.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[role=button]')){e.preventDefault();e.target.click()}});
@@ -203,5 +203,51 @@ function topics(){
    k:u=>{setFocus(u);close();startPlay('feed')}});
 }
 
-window.ONB={need,run(){return new Promise(res=>{if(!inApp())landing();else survey()})},topics,landing,survey,startTest,_S:()=>S,_P:()=>P};
+
+// ---------- экран «Мои данные» (иконка профиля на главной)
+const MON=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+function ruDate(iso){const m=/^(\d{4})-(\d{2})-(\d{2})/.exec(iso||'');return m?(+m[3])+' '+MON[+m[2]-1]:null}
+function doExport(done){
+ try{save()}catch(e){}
+ const name='tilde-progress-'+today()+'.json',json=JSON.stringify(ST);
+ const mark=()=>{ST.exp=today();try{lsSet()}catch(e){}done&&done()};
+ const dl=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([json],{type:'application/json'}));a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),3000);mark()};
+ try{
+  const f=new File([json],name,{type:'application/json'});
+  if(navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f],title:'Tilde — прогресс'}).then(mark).catch(e=>{if(!e||e.name!=='AbortError')dl()});return}
+ }catch(e){}
+ dl();
+}
+function data(){
+ const kn=KW.size,rep=(()=>{try{return learnIdx().length}catch(e){return LW.size}})(),last=ruDate(ST.exp);
+ const num=n=>`<span style="flex:none;width:22px;text-align:center;font-size:24px;font-weight:800;line-height:1;background:linear-gradient(transparent 62%,rgba(200,243,29,.9) 62%,rgba(200,243,29,.9) 88%,transparent 88%)">${n}</span>`;
+ const row=(n,t)=>`<div style="display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:18px;background:rgba(255,255,255,.62);font-size:15px;font-weight:600">${num(n)}${t}</div>`;
+ view(`<span class="obp" data-act="back" role="button" tabindex="0">← Назад</span>
+ <div style="margin-top:18px;font-size:13px;color:#5f5e5a">Профиль</div><div style="font-size:30px;font-weight:800;letter-spacing:-.8px;margin-top:2px">Мои данные</div>
+ <div style="margin-top:8px;font-size:14px;line-height:1.45;color:#4a4943">Прогресс хранится только на этом телефоне. Сохраните копию, чтобы не потерять его или перенести на другой телефон.</div>
+ <div style="display:flex;gap:10px;margin-top:16px"><div style="flex:1;padding:14px 16px;border-radius:22px;background:#171716;box-shadow:0 10px 24px rgba(0,0,0,.25)"><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d9ff4a">Знаю</span><div style="margin-top:4px;font-size:52px;font-weight:800;letter-spacing:-2px;line-height:1;color:#c8f31d;text-shadow:0 0 10px rgba(200,243,29,.9),0 0 28px rgba(200,243,29,.55),0 0 2px #fff">${kn}</div></div><div style="flex:1;padding:14px 16px;border-radius:22px;background:#171716;box-shadow:0 10px 24px rgba(0,0,0,.25)"><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ffb04d">Повторить</span><div style="margin-top:4px;font-size:52px;font-weight:800;letter-spacing:-2px;line-height:1;color:#ff9a2e;text-shadow:0 0 10px rgba(255,154,46,.85),0 0 26px rgba(255,140,30,.55)">${rep}</div></div></div>
+ <div style="position:relative;overflow:hidden;margin-top:12px;padding:20px;border-radius:28px;background:linear-gradient(160deg,#1f1f1d,#111110);color:#f4f3ee;box-shadow:0 14px 30px rgba(0,0,0,.22)">${wl(5)}<div style="position:relative;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:${LIME};font-weight:700">Шаг 1</div><div style="position:relative;margin-top:3px;font-size:22px;font-weight:800;letter-spacing:-.4px">Сохранить прогресс</div><div style="position:relative;margin-top:6px;font-size:14px;line-height:1.4;color:#a9a8a0">Получится один файл. Отправьте его себе в Telegram или на почту, либо сохраните в «Файлы».</div><button class="obb" data-act="save" style="position:relative;margin-top:16px;padding:16px">Сохранить файл</button><div id="obl" style="position:relative;margin-top:10px;text-align:center;font-size:13px;color:#a9a8a0">${last?'Последняя копия: '+last:'Копия ещё не сохранялась'}</div></div>
+ <div style="margin-top:10px;padding:20px;border-radius:28px;background:rgba(255,255,255,.62)"><div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7a7a72;font-weight:700">Шаг 2</div><div style="margin-top:3px;font-size:22px;font-weight:800;letter-spacing:-.4px">Загрузить прогресс</div><div style="margin-top:6px;font-size:14px;line-height:1.4;color:#5f5e5a">Выберите файл, который вы сохраняли раньше. Текущий прогресс на этом телефоне будет заменён.</div><button class="obb" data-act="load" id="obld" style="margin-top:16px;padding:16px;background:#171716;color:${LIME};box-shadow:none">Выбрать файл</button></div>
+ <div style="margin-top:24px;font-size:18px;font-weight:800">Как перенести на другой телефон</div>
+ <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">${row(1,'На старом телефоне: «Сохранить файл»')}${row(2,'Отправьте файл себе: Telegram, почта, AirDrop')}${row(3,'На новом телефоне откройте Tilde и нажмите «Выбрать файл»')}</div>
+ <div style="margin-top:14px;padding:14px 16px;border-radius:18px;background:rgba(255,154,46,.14);border-left:4px solid #ff9a2e;font-size:14px;line-height:1.45;color:#4a4943"><b>Важно.</b> Если удалить приложение или очистить данные Safari, прогресс пропадёт. Сохраняйте копию раз в неделю.</div>
+ <div data-act="reset" role="button" tabindex="0" style="margin-top:22px;text-align:center;font-size:15px;font-weight:700;color:#a32d2d;cursor:pointer">Сбросить весь прогресс</div>
+ <input type="file" id="obfi" accept="application/json,.json" hidden>`,
+ {act:a=>{
+   if(a==='back')close();
+   else if(a==='save')doExport(()=>{const l=document.getElementById('obl');if(l)l.textContent='Сохранено сегодня, '+ruDate(ST.exp)});
+   else if(a==='load')document.getElementById('obfi').click();
+   else if(a==='reset'){if(confirm('Удалить весь прогресс на этом устройстве? Это нельзя отменить.')){try{localStorage.removeItem(LSK)}catch(e){}location.reload()}}
+ }});
+ const fi=document.getElementById('obfi');
+ fi.onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();
+  r.onload=()=>{try{const j=JSON.parse(r.result);if(!j||typeof j.c!=='object')throw 0;
+   if(!confirm('Заменить текущий прогресс файлом?')){fi.value='';return}
+   applyState(j);if(!ST.ob||!ST.ob.done)ST.ob={done:true,path:'import'};lsSet();
+   const b=document.getElementById('obld');if(b)b.textContent='Загружено ✓';
+   setTimeout(()=>{close();go('home')},700)}catch(_){alert('Не удалось прочитать файл')}};
+  r.readAsText(f)};
+}
+
+window.ONB={data,need,run(){return new Promise(res=>{if(!inApp())landing();else survey()})},topics,landing,survey,startTest,_S:()=>S,_P:()=>P};
 })();
